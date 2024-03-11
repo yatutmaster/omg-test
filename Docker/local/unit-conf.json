@@ -1,0 +1,39 @@
+{
+  "listeners": {
+    "*:8080": {
+      "pass": "routes"
+    }
+  },
+  "routes": [
+    {
+      "match": {
+        "uri": "!/index.php"
+      },
+      "action": {
+        "share": "/app/public/$uri",
+        "fallback": {
+          "pass": "applications/app"
+        }
+      }
+    }
+  ],
+  "applications": {
+    "app": {
+      "type": "php",
+      "working_directory": "/app",
+      "root": "/app/public",
+      "script": "index.php",
+      "user": "root",
+      "group": "root",
+      "processes": {
+        "max": 500,
+        "spare": 20,
+        "idle_timeout": 20
+      },
+      "limits": {
+        "timeout": 60,
+        "requests": 1000
+      }
+    }
+  }
+}
