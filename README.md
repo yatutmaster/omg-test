@@ -19,3 +19,10 @@
 ```bash
 ./vendor/bin/phpunit
 ```
+
+
+### Описание тз
+https://docs.google.com/document/d/1QghHkoxqdCJmcYUnHCoBXyI4llEHRKIx/edit#heading=h.gjdgxs
+
+
+
